@@ -3,12 +3,16 @@
 uniqueID
 ````````
 
-**Data Type:** `integer <https://specs.frictionlessdata.io/table-schema/#integer>`_
+**Data Type:** `string <https://specs.frictionlessdata.io/table-schema/#string>`_
 
-**Example:** `38`
+**Example:** `AA38`
 
 The unique identifier assigned to the apprentice. This value must be unique within the dataset.
 
+
+
+- Required: True
+- Unique: True
 
 
 
@@ -17,11 +21,13 @@ The unique identifier assigned to the apprentice. This value must be unique with
 sponsorID
 `````````
 
-**Data Type:** `integer <https://specs.frictionlessdata.io/table-schema/#integer>`_
+**Data Type:** `string <https://specs.frictionlessdata.io/table-schema/#string>`_
 
-**Example:** `14498`
+**Example:** `BB14498`
 
 The identifier assigned to the apprentice's sponsor.
+
+
 
 
 
@@ -35,7 +41,9 @@ dob
 
 **Example:** `2000-01-01`
 
-The apprentice's date of birth. Must be in the format YYYY-MM-DD.
+The apprentice's date of birth. Must be in the format YYYY-MM-DD. The apprentice must be at least 16 years old and less than 110 years old at the time of reporting.
+
+
 
 
 
@@ -59,6 +67,8 @@ The value of ``genderInd`` must be one of the following:
 
 
 
+
+
 .. _ethnicInd:
 
 ethnicInd
@@ -68,14 +78,15 @@ ethnicInd
 
 **Example:** `9`
 
-If the apprentice indicates being a person of Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture in origin, regardless of race, the value of this field is '1'. If the apprentice does not meet any of these conditions, the value of this field is '2' or '0'. If the apprentice does not self-identify ethnicity, the value of this field is '9'.
+If the apprentice indicates being a person of Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture in origin, regardless of race, the value of this field is '1'. If the apprentice does not meet any of these conditions, the value of this field is '2'. If the apprentice does not self-identify ethnicity, the value of this field is '9'.
 
 The value of ``ethnicInd`` must be one of the following:
 
-- 0
 - 1
 - 2
 - 9
+
+
 
 
 
@@ -88,14 +99,15 @@ natIndianInd
 
 **Example:** `2`
 
-If the apprentice indicates origins in any of the original peoples of North America and South America (including Central America), and who maintains cultural identification through tribal affiliation or community recognition, the value of this field is '1'. If the apprentice does not meet any of these conditions, the value of this field is '2' or '0'. If the apprentice does not self-identify ethnicity, the value of this field is '9'.
+If the apprentice indicates origins in any of the original peoples of North America and South America (including Central America), and who maintains cultural identification through tribal affiliation or community recognition, the value of this field is '1'. If the apprentice does not meet any of these conditions, the value of this field is '0'. If the apprentice does not self-identify ethnicity, the value of this field is '9'.
 
 The value of ``natIndianInd`` must be one of the following:
 
 - 0
 - 1
-- 2
 - 9
+
+
 
 
 
@@ -108,14 +120,15 @@ asianInd
 
 **Example:** `1`
 
-If the apprentice indicates having origins in any of the original peoples of the Far East, Southeast Asia, or the Indian Subcontinent (e.g., India, Pakistan, Bangladesh, Sri Lanka, Nepal, Sikkim, and Bhutan), the value of this field is '1'. This area includes, for example, Cambodia, China, Japan, Korea, Malaysia, Pakistan, the Philippine Islands, Thailand, and Vietnam. If the apprentice does not meet any of these conditions, record '2' or '0'. If the apprentice does not self-identify ethnicity, the value of this field is '9'.
+If the apprentice indicates having origins in any of the original peoples of the Far East, Southeast Asia, or the Indian Subcontinent (e.g., India, Pakistan, Bangladesh, Sri Lanka, Nepal, Sikkim, and Bhutan), the value of this field is '1'. This area includes, for example, Cambodia, China, Japan, Korea, Malaysia, Pakistan, the Philippine Islands, Thailand, and Vietnam. If the apprentice does not meet any of these conditions, record '0'. If the apprentice does not self-identify ethnicity, the value of this field is '9'.
 
 The value of ``asianInd`` must be one of the following:
 
 - 0
 - 1
-- 2
 - 9
+
+
 
 
 
@@ -128,14 +141,15 @@ africaAmerInd
 
 **Example:** `9`
 
-If the apprentice indicates having origins in any of the black racial groups of Africa, the value of this field is '1'. If the apprentice does not meet any of these conditions, the value of this field is '2' or '0'. If the apprentice does not self-identify ethnicity, the value of this field is '9'.
+If the apprentice indicates having origins in any of the black racial groups of Africa, the value of this field is '1'. If the apprentice does not meet any of these conditions, the value of this field is '0'. If the apprentice does not self-identify ethnicity, the value of this field is '9'.
 
 The value of ``africaAmerInd`` must be one of the following:
 
 - 0
 - 1
-- 2
 - 9
+
+
 
 
 
@@ -148,14 +162,15 @@ natHawaiInd
 
 **Example:** `1`
 
-If the apprentice indicates having origins in any of the original peoples of Hawaii, Guam, Samoa, or other Pacific Islands, the value of this field is '1'. If the apprentice does not meet any of these conditions, the value of this field is '2' or '0'. If the apprentice does not self-identify ethnicity, the value of this field is '9'.
+If the apprentice indicates having origins in any of the original peoples of Hawaii, Guam, Samoa, or other Pacific Islands, the value of this field is '1'. If the apprentice does not meet any of these conditions, the value of this field is '0'. If the apprentice does not self-identify ethnicity, the value of this field is '9'.
 
 The value of ``natHawaiInd`` must be one of the following:
 
 - 0
 - 1
-- 2
 - 9
+
+
 
 
 
@@ -168,14 +183,15 @@ wInd
 
 **Example:** `9`
 
-If the apprentice indicates having origins in any of the original peoples of Europe, the Middle East, or North Africa, the value of this field is '1'. If the apprentice does not meet any of these conditions, the value of this field is '2' or '0'. If the apprentice does not self-identify ethnicity, the value of this field is '9'.
+If the apprentice indicates having origins in any of the original peoples of Europe, the Middle East, or North Africa, the value of this field is '1'. If the apprentice does not meet any of these conditions, the value of this field is '0'. If the apprentice does not self-identify ethnicity, the value of this field is '9'.
 
 The value of ``wInd`` must be one of the following:
 
 - 0
 - 1
-- 2
 - 9
+
+
 
 
 
@@ -188,14 +204,15 @@ vetStatInd
 
 **Example:** `1`
 
-If the apprentice indicates having served on active duty in the armed forces and who was discharged or released from such service under conditions other than dishonorable, the value of this field is '1'. If the apprentice does not meet any of these conditions, the value of this field is '2' or '0'. If the apprentice does not self-identify veteran :ref:`status`, the value of this field is '9'.
+If the apprentice indicates having served on active duty in the armed forces and who was discharged or released from such service under conditions other than dishonorable, the value of this field is '1'. If the apprentice does not meet any of these conditions, the value of this field is '2'. If the apprentice does not self-identify veteran :ref:`status`, the value of this field is '9'.
 
 The value of ``vetStatInd`` must be one of the following:
 
-- 0
 - 1
 - 2
 - 9
+
+
 
 
 
@@ -208,14 +225,15 @@ disabilityInd
 
 **Example:** `0`
 
-If the apprentice indicates having any “disability,” as defined in Section 3(2)(a) of the Americans with Disabilities Act of 1990 (42 U.S.C. 12102). Under that definition, a “disability” is a physical or mental impairment that substantially limits one or more of the person’s major life activities. (For definitions and examples of “physical or mental impairment” and “major life activities,” see paragraphs (1) and (2) of the definition of the term “disability” in 29 CFR 37.4, the definition section of the WIA non-discrimination regulations.), the value of this field is ‘1’. If the apprentice does not meet any of these conditions, the value of this field is ‘0’. If the apprentice does not self-identify disability :ref:`status`, the value of this field is ‘9’ or '0'. Note: the undocumented value of '5' is also found in the SAA datasets.
+If the apprentice indicates having any “disability,” as defined in Section 3(2)(a) of the Americans with Disabilities Act of 1990 (42 U.S.C. 12102). Under that definition, a “disability” is a physical or mental impairment that substantially limits one or more of the person’s major life activities. (For definitions and examples of “physical or mental impairment” and “major life activities,” see paragraphs (1) and (2) of the definition of the term “disability” in 29 CFR 37.4, the definition section of the WIA non-discrimination regulations.), the value of this field is ‘1’. If the apprentice does not meet any of these conditions, the value of this field is ‘0’. If the apprentice does not self-identify disability :ref:`status`, the value of this field is ‘9’. Note: the undocumented value of '5' is also found in the SAA datasets.
 
 The value of ``disabilityInd`` must be one of the following:
 
-- 0
 - 1
 - 2
 - 9
+
+
 
 
 
@@ -229,9 +247,10 @@ education
 **Example:** `7`
 
 The highest level of :ref:`education` the apprentice has completed. The value of this field is the highest grade the apprentice has completed or the highest degree the apprentice has received. Permitted values are:
-1. Not High School Graduate
-3. High School Graduate (including equivalency)
-5. Participant did not self-identify
+1. Less than 9th Grade
+2. 9th to 12th Grade
+3. High School Graduate or GED
+5. Unknown
 6. Some College or an Associate's Degree
 7. Bachelor's Degree
 8. Master's Degree
@@ -240,12 +259,15 @@ The highest level of :ref:`education` the apprentice has completed. The value of
 The value of ``education`` must be one of the following:
 
 - 1
+- 2
 - 3
 - 5
 - 6
 - 7
 - 8
 - 9
+
+
 
 
 
@@ -262,6 +284,9 @@ The total number of hours the apprentice is expected to work during the term of 
 
 
 
+- Minimum: 1
+
+
 
 .. _termLengthRemaining:
 
@@ -274,6 +299,9 @@ termLengthRemaining
 
 The total number of hours the apprentice has remaining to work during the term of the apprenticeship program.
 
+
+
+- Minimum: 0
 
 
 
@@ -290,6 +318,8 @@ The date the apprentice began the apprenticeship program. Must be in the format 
 
 
 
+The value of ``startDt`` must be greater than the value of ``dob``
+
 
 .. _expCompDt:
 
@@ -304,6 +334,8 @@ The date the apprentice is expected to complete the apprenticeship program. Must
 
 
 
+The value of ``expCompDt`` must be greater than the value of ``startDt``
+
 
 .. _exitDt:
 
@@ -317,6 +349,8 @@ exitDt
 The date the apprentice exited the apprenticeship program. Must be in the format YYYY-MM-DD.
 
 
+
+The value of ``exitDt`` must be greater than the value of ``startDt``
 
 
 .. _status:
@@ -341,6 +375,8 @@ The value of ``status`` must be one of the following:
 
 
 
+
+
 .. _statusReason:
 
 statusReason
@@ -351,6 +387,8 @@ statusReason
 **Example:** `Apprentice received a job offer and left the program.`
 
 Additional information about the apprentice's :ref:`status`, typically when the :ref:`status` is 'CA'.
+
+
 
 
 
@@ -368,6 +406,9 @@ The hourly wage the apprentice received when entering the apprenticeship program
 
 
 
+- Minimum: 1.0
+
+
 
 .. _exitWage:
 
@@ -382,6 +423,9 @@ The hourly wage the apprentice received when exiting the apprenticeship program.
 
 
 
+- Minimum: 1.0
+
+
 
 .. _onetSocCode:
 
@@ -392,7 +436,9 @@ onetSocCode
 
 **Example:** `13-2011.00`
 
-The O*NET-SOC code associated with the apprentice's occupation. The code must be in the format ##-####.##.
+The O*NET-SOC code associated with the apprentice's occupation. The code must be in the format '##-####.##'. The value 00-0000.00 is prohibited.
+
+
 
 
 
@@ -407,6 +453,8 @@ occTitle
 **Example:** `Accountants and Auditors`
 
 The O*NET title of the apprentice's occupation. This must match the title of the recorded O*NET-SOC code.
+
+
 
 
 
@@ -430,6 +478,8 @@ The value of ``occType`` must be one of the following:
 - TB
 - CB
 - HY
+
+
 
 
 

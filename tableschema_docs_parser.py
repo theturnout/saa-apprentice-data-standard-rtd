@@ -49,6 +49,7 @@ def create_docs(fields):
 {example}\n
 {description}\n
 {enumerations}\n
+{other_constraints}\n
 
 """
     data_type_reference_url_tmpl = 'https://specs.frictionlessdata.io/table-schema/#'
@@ -59,19 +60,23 @@ def create_docs(fields):
         for field in fields:
 
             enumerations = ''
+            other_constraints = ''
 
-            if field.get("constraints", None) is not None and field['constraints'].get('enum', None) is not None:
-                enumerations = 'The value of ``{}`` must be one of the following:\n\n'.format(
-                    field['name'])
-                for enum in field['constraints']['enum']:
-                    enumerations += '- {}\n'.format(enum)
-            # if "enum" in field.get('constraints', None):
-            #     enum_list = []
-            #     for enum in (field['constraints'].get('enum') or []):
-            #         enum_list.append('- {}'.format(enum))
+            if field.get("constraints"):
+                if field['constraints'].get('enum'):
+                    enumerations = 'The value of ``{}`` must be one of the following:\n\n'.format(
+                        field['name'])
+                    for enum in field['constraints']['enum']:
+                        enumerations += '- {}\n'.format(enum)
 
-            #     enumerations = 'The value of ``{}`` must be one of the following:\n\n'.format(
-            #         field['name']) + '\n'.join(enum_list)
+                if field["constraints"].get('greaterThanField'):
+                    other_constraints += 'The value of ``{}`` must be greater than the value of ``{}``'.format(
+                        field['name'], field["constraints"]["greaterThanField"])
+
+                for constraint, value in field.get("constraints").items():
+                    if constraint not in ['enum', 'greaterThanField', 'pattern', 'minYearsBefore', 'maxYearsBefore']:
+                        other_constraints += '- {}: {}\n'.format(
+                            constraint.capitalize(), value)
 
             rst.write(core_template.format(
                 ref_label='.. _{}:'.format(field['name']),
@@ -82,7 +87,7 @@ def create_docs(fields):
                 example='**Example:** `{}`'.format(
                     field['example']) if 'example' in field else '',
                 description=decorate_links(field['description'], field_names),
-                enumerations=enumerations
+                enumerations=enumerations, other_constraints=other_constraints
             ))
 
 
